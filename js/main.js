@@ -122,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const countdownContent = document.querySelector('.countdown-content');
                 if (countdownContent) {
                     countdownContent.innerHTML = `
-                        <h1 class="countdown-title">Magnolia Regional is Here!</h1>
+                        <h1 class="countdown-title"> The 2026 FRC Championship is Here!</h1>
                         <div class="event-details">
-                            <p class="event-date">March 18–21, 2026 • Week 3</p>
-                            <p class="event-location">South Mississippi Fairgrounds, Laurel, MS</p>
+                            <p class="event-date">April 29 - May 2, 2026 • Week 3</p>
+                            <p class="event-location">George R. Brown Convention Center, Houston, TX, USA</p>
                         </div>
                     `;
                 }
