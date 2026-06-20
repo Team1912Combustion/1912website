@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!countdownTimer) return;
 
         // Set the target date (Magnolia Regional: March 18th, 2026 first day)
-        const targetDate = new Date('2026-04-29T08:00:00-05:00').getTime();
+        const targetDate = new Date('2026-07-18T08:00:00-05:00').getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -122,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const countdownContent = document.querySelector('.countdown-content');
                 if (countdownContent) {
                     countdownContent.innerHTML = `
-                        <h1 class="countdown-title"> The 2026 FRC Championship is Here!</h1>
+                        <h1 class="countdown-title"> The 2026 Northshore Knockout is Here!</h1>
                         <div class="event-details">
-                            <p class="event-date">April 29 - May 2, 2026 • Week 3</p>
-                            <p class="event-location">George R. Brown Convention Center, Houston, TX, USA</p>
+                            <p class="event-date">July 18th, 2026 • Offseason</p>
+                            <p class="event-location"> Mandeville High School, Mandeville, LA</p>
                         </div>
                     `;
                 }
