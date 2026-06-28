@@ -1,4 +1,4 @@
-const calendarId = 'ninq39q6r61rid4mot3h1ues5u3cmrdr@import.calendar.google.com';
+const calendarId = 'o3eivkpjp04uchm38easqesdt9ds8pdt@import.calendar.google.com';
 const apiKey = 'AIzaSyDFk7BVAYxUIngHdDOnVFD14XhnqdOSFDc';
 const calendarEventsContainer = document.getElementById('calendar-events');
 const loadMoreBtn = document.getElementById('load-more-btn');
@@ -10,12 +10,14 @@ const EVENTS_PER_BATCH = 6;
 
 async function fetchCalendarEvents() {
   const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}`;
-
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
-    allEvents = data.items || [];
+    allEvents = (data.items || []).filter(event => {
+      const summary = event.summary || '';
+      return !/\badded\b$/i.test(summary);
+    });
     displayNextBatch();
   } catch (error) {
     console.error('Failed to fetch calendar events:', error);
@@ -40,7 +42,9 @@ function cleanDescription(description) {
   if (!description) return '';
   const cutoff = description.indexOf("You can see the RSVP status");
   let cleaned = cutoff !== -1 ? description.substring(0, cutoff) : description;
-  return cleaned.replace(/powered by Google Calendar/i, '').trim();
+  cleaned = cleaned.replace(/powered by Google Calendar/i, '').trim();
+  cleaned = cleaned.replace(/\(.*?added\)/gi, '').trim(); // <-- add this
+  return cleaned;
 }
 
 function createAddToCalendarLink(event) {
