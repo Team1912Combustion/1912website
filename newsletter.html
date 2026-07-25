@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/animations.css">
     <script src="https://unpkg.com/scrollreveal@4.1.0/dist/scrollreveal.min.js" defer></script>
 </head>
+    <script src="js/main.js"></script>
+    <script src="js/newsletter.js"></script>
+
 <body>
     <header>
         <div class="header-content">
@@ -106,19 +109,158 @@
             </div>
         </section>
 
-        <!-- Newsletter Signup Section -->
-        <section class="newsletter-signup" style="background: linear-gradient(to bottom, rgba(11, 12, 16, 0.95), rgba(31, 31, 31, 0.98)); padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
-            <div class="signup-container" style="text-align: center; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%); border-radius: 20px; padding: 3rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); border: 1px solid rgba(36, 152, 220, 0.2);">
-                <h2 style="font-size: 3rem; color: #2498DC; margin-bottom: 1.5rem; font-family: 'Nasalization', sans-serif;">Stay Connected</h2>
-                <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Get the latest updates on Team 1912 Combustion's progress, competitions, and community involvement delivered straight to your inbox.</p>
-                <div class="signup-form" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-                    <button class="signup-btn" style="background: linear-gradient(135deg, #2498DC, #FF8300); color: white; padding: 1.2rem 3rem; border: none; border-radius: 50px; font-size: 1.3rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(36, 152, 220, 0.3); font-family: 'Nasalization', sans-serif;" onclick="alert('Newsletter signup coming soon! Contact us at team1912combustion@gmail.com to be added to our mailing list.')">
-                        Subscribe to Newsletter
-                    </button>
-                    <p class="signup-note" style="font-size: 1rem; color: rgba(255, 255, 255, 0.7); font-style: italic; max-width: 500px;">Newsletter signup form coming soon! For now, contact us at team1912combustion@gmail.com to be added to our mailing list.</p>
-                </div>
-            </div>
-        </section>
+<!-- Newsletter Signup Section -->
+<section class="newsletter-signup" style="background: linear-gradient(to bottom, rgba(11,12,16,.95), rgba(31,31,31,.98)); padding:4rem 2rem; max-width:1200px; margin:0 auto;">
+
+    <div class="signup-container" style="
+        background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f0f23 100%);
+        border-radius:20px;
+        padding:3.5rem;
+        border:1px solid rgba(36,152,220,.2);
+        box-shadow:0 20px 60px rgba(0,0,0,.4);
+        text-align:center;
+    ">
+
+        <h2 style="
+            color:#2498DC;
+            font-size:3rem;
+            margin-bottom:1rem;
+            font-family:'Nasalization',sans-serif;
+        ">
+            Stay Connected
+        </h2>
+
+        <p style="
+            color:rgba(255,255,255,.9);
+            font-size:1.2rem;
+            max-width:700px;
+            margin:0 auto 3rem auto;
+            line-height:1.6;
+        ">
+            Join our mailing list to receive monthly newsletters featuring
+            competition updates, outreach events, team achievements, sponsor
+            highlights, and other Team 1912 Combustion news.
+        </p>
+
+        <form
+            id="newsletterForm"
+            action="https://docs.google.com/forms/d/e/1FAIpQLScLI_f6Xao_rbrvy2D44B4QAXpJiIjczBqMvW1ejpwydBMnRw/formResponse"
+            method="POST"
+            target="hidden_iframe"
+            style="
+                max-width:700px;
+                margin:0 auto;
+                display:flex;
+                flex-direction:column;
+                gap:1.5rem;
+            "
+        >
+
+            <input
+                type="text"
+                name="entry.925602916"
+                placeholder="Your Name"
+                required
+                style="
+                    padding:1rem 1.5rem;
+                    border-radius:12px;
+                    border:2px solid rgba(36,152,220,.3);
+                    background:#202437;
+                    color:white;
+                    font-size:1.1rem;
+                    outline:none;
+                    transition:.3s;
+                "
+                onfocus="this.style.borderColor='#2498DC'"
+                onblur="this.style.borderColor='rgba(36,152,220,.3)'"
+            >
+
+            <input
+                type="email"
+                name="entry.460664873"
+                placeholder="Email Address"
+                required
+                style="
+                    padding:1rem 1.5rem;
+                    border-radius:12px;
+                    border:2px solid rgba(36,152,220,.3);
+                    background:#202437;
+                    color:white;
+                    font-size:1.1rem;
+                    outline:none;
+                    transition:.3s;
+                "
+                onfocus="this.style.borderColor='#2498DC'"
+                onblur="this.style.borderColor='rgba(36,152,220,.3)'"
+            >
+
+        <div style="display:none;">
+        <label for="website">Leave blank</label>
+        <input
+            type="text"
+            id="website"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+        >
+        </div>
+
+        <button
+            id="subscribeBtn"
+            type="submit"
+            style="
+                background:linear-gradient(135deg,#2498DC,#FF8300);
+                color:white;
+                border:none;
+                padding:1.15rem;
+                border-radius:50px;
+                cursor:pointer;
+                font-size:1.2rem;
+                font-weight:bold;
+                font-family:'Nasalization',sans-serif;
+                letter-spacing:1px;
+                transition:.3s;
+                box-shadow:0 10px 30px rgba(36,152,220,.35);
+            "
+        >
+            SUBSCRIBE
+        </button>
+
+        </form>
+
+        <iframe
+            name="hidden_iframe"
+            style="display:none;"
+        ></iframe>
+
+        <div
+            id="newsletterSuccess"
+            style="
+                display:none;
+                margin-top:2rem;
+                color:#52d273;
+                font-size:1.2rem;
+                font-weight:bold;
+            "
+        >
+            ✓ Thanks for subscribing! You'll receive future Team 1912 newsletters in your inbox.
+        </div>
+
+        <p style="
+            margin-top:2rem;
+            color:rgba(255,255,255,.6);
+            font-size:.95rem;
+            max-width:650px;
+            margin-left:auto;
+            margin-right:auto;
+            line-height:1.6;
+        ">
+            We respect your privacy. Your email address will only be used for Team 1912 Combustion newsletters and important team updates. We will never sell or share your information.
+        </p>
+
+    </div>
+
+</section>
 
         <!-- Past Newsletters Section -->
         <section class="past-newsletters">
@@ -197,25 +339,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script>
-        function showNewsletterPDF() {
-            document.getElementById('pdf-modal').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeNewsletterPDF() {
-            document.getElementById('pdf-modal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('pdf-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeNewsletterPDF();
-            }
-        });
-    </script>
+
 </body>
 </html>
 
