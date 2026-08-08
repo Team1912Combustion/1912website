@@ -1355,4 +1355,12 @@
   .pdf-modal-body iframe {
     min-height: 500px;
   }
+  .outreach-feature.reverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .outreach-feature.reverse {
+        flex-direction: column;
+    }
 }
