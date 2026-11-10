@@ -1,36 +1,115 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FTC Team 27406 Impulse and its community outreach initiatives.">
+
+    <meta
+        name="description"
+        content="FTC Team 27406 Impulse and its community outreach initiatives."
+    >
     <meta name="theme-color" content="#2498DC">
 
     <link rel="shortcut icon" href="assets/frc1912.ico">
+
     <title>FTC Team 27406 Impulse - Team 1912 Combustion</title>
 
+    <!-- Existing Website Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/animations.css">
 
-    <script src="https://unpkg.com/scrollreveal@4.1.0/dist/scrollreveal.min.js" defer></script>
+    <!-- Accordion Functionality Only -->
+    <style>
+        .outreach-accordion-trigger {
+            appearance: none;
+            -webkit-appearance: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: inherit;
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .outreach-accordion-trigger:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 4px;
+        }
+
+        .outreach-accordion-panel {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 350ms ease;
+        }
+
+        .outreach-accordion-panel.is-open {
+            grid-template-rows: 1fr;
+        }
+
+        .outreach-accordion-panel-inner {
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .outreach-accordion-icon {
+            display: inline-block;
+            flex-shrink: 0;
+            transition: transform 350ms ease;
+        }
+
+        .outreach-accordion-trigger[aria-expanded="true"] .outreach-accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .outreach-accordion-panel,
+            .outreach-accordion-icon {
+                transition: none;
+            }
+        }
+    </style>
+
+    <!-- Existing Website Scripts -->
+    <script
+        src="https://unpkg.com/scrollreveal@4.1.0/dist/scrollreveal.min.js"
+        defer
+    ></script>
+
     <script src="js/main.js" defer></script>
+
 </head>
 
 <body>
+
+    <!-- Navigation Header -->
     <header>
         <div class="header-content">
+
             <div class="logo-container">
-                <img src="assets/static/1912Horizontal.png" alt="Team 1912 Logo" class="main-logo">
+                <img
+                    src="assets/static/1912Horizontal.png"
+                    alt="Team 1912 Logo"
+                    class="main-logo"
+                >
             </div>
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html">HOME</a></li>
+
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">ABOUT</a>
+
                         <ul class="dropdown-menu">
                             <li><a href="about.html">Team Story</a></li>
                             <li><a href="sponsors.html">Sponsors</a></li>
@@ -40,66 +119,130 @@
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">PROGRAMS</a>
+
                         <ul class="dropdown-menu">
                             <li><a href="robots.html">Robots</a></li>
                             <li><a href="outreach.html">Outreach</a></li>
                             <li><a href="programs.html">Student Programs</a></li>
-                            <li><a href="impulse.html" class="active">FTC Team 27406 Impulse</a></li>
+                            <li>
+                                <a href="impulse.html" class="active">
+                                    FTC Team 27406 Impulse
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">EVENTS <span class="new-indicator">!</span></a>
+                        <a href="#" class="dropdown-toggle">
+                            EVENTS <span class="new-indicator">!</span>
+                        </a>
+
                         <ul class="dropdown-menu">
-                            <li><a href="events.html">Events <span class="new-indicator">!</span></a></li>
+                            <li>
+                                <a href="events.html">
+                                    Events <span class="new-indicator">!</span>
+                                </a>
+                            </li>
                             <li><a href="newsletter.html">Newsletter</a></li>
                         </ul>
                     </li>
+
                 </ul>
             </nav>
 
-            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <button
+                id="mobile-menu-toggle"
+                class="mobile-menu-toggle"
+                aria-label="Toggle navigation menu"
+            >
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
             </button>
+
         </div>
     </header>
 
+
+    <!-- Social Media Links -->
     <div class="social-icons">
-        <a href="https://www.facebook.com/FRC1912" target="_blank" title="Facebook">
+
+        <a
+            href="https://www.facebook.com/FRC1912"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Facebook"
+        >
             <img src="assets/websites/facebook.png" alt="Facebook">
         </a>
-        <a href="https://www.instagram.com/frc1912" target="_blank" title="Instagram">
+
+        <a
+            href="https://www.instagram.com/frc1912"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+        >
             <img src="assets/websites/instagram.png" alt="Instagram">
         </a>
-        <a href="https://www.youtube.com/team1912combustion" target="_blank" title="YouTube">
+
+        <a
+            href="https://www.youtube.com/team1912combustion"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="YouTube"
+        >
             <img src="assets/websites/Youtube.png" alt="YouTube">
         </a>
-        <a href="https://github.com/team1912combustion" target="_blank" title="GitHub">
+
+        <a
+            href="https://github.com/team1912combustion"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+        >
             <img src="assets/websites/github-logo.png" alt="GitHub">
         </a>
-        <a href="https://www.thebluealliance.com/team/1912" target="_blank" title="The Blue Alliance">
+
+        <a
+            href="https://www.thebluealliance.com/team/1912"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="The Blue Alliance"
+        >
             <img src="assets/websites/thebluealliance.png" alt="The Blue Alliance">
         </a>
-        <a href="https://www.tiktok.com/@team1912combustion" target="_blank" title="TikTok">
+
+        <a
+            href="https://www.tiktok.com/@team1912combustion"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="TikTok"
+        >
             <img src="assets/websites/tiklogo.webp" alt="TikTok">
         </a>
+
     </div>
 
+
+    <!-- Main Page Content -->
     <main class="page-content">
 
-        <!-- Page introduction -->
+        <!-- Page Introduction -->
         <div class="page-header reveal">
+
             <h1>FTC Team 27406 – Impulse</h1>
+
             <p class="page-description">
                 Bringing robotics, engineering, and community outreach together
                 to make a difference beyond the competition field.
             </p>
+
         </div>
+
 
         <!-- About Impulse -->
         <section class="about-section reveal">
+
             <div class="section-image">
                 <img
                     src="assets/static/photos/ftc27406.jpg"
@@ -109,9 +252,12 @@
             </div>
 
             <div class="section-content">
+
                 <h2>About Impulse</h2>
 
-                <p><strong>Founded:</strong> 2024</p>
+                <p>
+                    <strong>Founded:</strong> 2024
+                </p>
 
                 <p>
                     Born from a desire to broaden student access to FIRST Tech
@@ -133,168 +279,266 @@
                     multiple FIRST programs.
                 </p>
 
-                <!-- Awards dropdown -->
+
+                <!-- Awards Dropdown -->
                 <div class="awards-dropdown">
-                    <button class="awards-toggle">Awards ▾</button>
 
-                    <div class="awards-content">
-                        <ul>
-                            <li>2025</li>
-                            <li>LAFTC Slidell Qualifier - Finalist Alliance Captain</li>
-                            <li>FTCLA Geismar Qualifier - Innovate Award sponsored by RTX, Winning Alliance - 1st Team Selected</li>
-                            <li>Louisiana Championship - Winning Alliance - 1st Team Selected, FIRST Leadership Award (Zakk Jackson)</li>
-                            <li>2024</li>
-                            <li>Walker Qualifier</li>
-                            <li>New Orleans Qualifier</li>
-                            <li>Louisiana Championship – FIRST Leadership Award (Zakk Jackson)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p>
-                    <a href="programs.html">Learn more about our FIRST programs</a>
-                </p>
-            </div>
-        </section>
-
-        <!-- Outreach Initiatives -->
-        <div class="page-header reveal">
-            <h2>Outreach Initiatives</h2>
-            <p class="page-description">
-                Using engineering, creativity, and community collaboration
-                to make a positive impact beyond robotics competitions.
-            </p>
-        </div>
-
-        <!-- Plant Identification Project Accordion -->
-        <section class="about-section reveal">
-            <div class="section-content">
-
-                <div class="awards-dropdown">
-                    <button
-                        class="awards-toggle"
-                        id="plant-project-toggle"
-                        aria-expanded="false"
-                        aria-controls="plant-project-content"
-                    >
-                        Plant Identification Tag Project ▾
+                    <button class="awards-toggle">
+                        Awards ▾
                     </button>
 
-                    <div
-                        class="awards-content"
-                        id="plant-project-content"
-                    >
-                        <h3>Project Overview</h3>
+                    <div class="awards-content">
 
-                        <p>
-                            Impulse is exploring a community project focused
-                            on plant identification tags for the Slidell
-                            Library Garden, with the goal of helping visitors
-                            learn more about the plants around them.
-                        </p>
+                        <ul>
+                            <li>2025</li>
 
-                        <p>
-                            The project involves exploring how plant labels
-                            could present useful information in a clear,
-                            accessible, and durable format suitable for an
-                            outdoor garden.
-                        </p>
+                            <li>
+                                LAFTC Slidell Qualifier - Finalist Alliance Captain
+                            </li>
 
-                        <p>
-                            Depending on the garden's needs, possible tag
-                            information could include a plant's common name,
-                            scientific name, and a QR code linking to
-                            additional information.
-                        </p>
+                            <li>
+                                FTCLA Geismar Qualifier - Innovate Award sponsored
+                                by RTX, Winning Alliance - 1st Team Selected
+                            </li>
 
-                        <h3>From Ideas to Implementation</h3>
+                            <li>
+                                Louisiana Championship - Winning Alliance -
+                                1st Team Selected, FIRST Leadership Award
+                                (Zakk Jackson)
+                            </li>
 
-                        <p>
-                            <strong>1. Gather input</strong><br>
-                            Learn from Master Gardeners, garden visitors,
-                            and other community members about what information
-                            would be most useful on plant identification tags.
-                        </p>
+                            <li>2024</li>
 
-                        <p>
-                            <strong>2. Explore designs</strong><br>
-                            Consider label layouts, readable text, suitable
-                            materials, and ways to make plant information
-                            easy to find.
-                        </p>
+                            <li>Walker Qualifier</li>
 
-                        <p>
-                            <strong>3. Test and refine</strong><br>
-                            Evaluate possible designs for readability,
-                            durability, accessibility, and ease of use,
-                            using feedback to guide improvements.
-                        </p>
+                            <li>New Orleans Qualifier</li>
 
-                        <p>
-                            The project is exploratory, and design decisions
-                            will depend on community feedback and the garden's
-                            requirements.
-                        </p>
+                            <li>
+                                Louisiana Championship – FIRST Leadership Award
+                                (Zakk Jackson)
+                            </li>
+                        </ul>
 
-                        <h3>Built With Community Input</h3>
-
-                        <p>
-                            A successful community project starts by
-                            understanding the people it is intended to help.
-                            Input from garden visitors and Master Gardeners
-                            can help the team determine which plant details
-                            matter most and how to present them.
-                        </p>
-
-                        <p>
-                            Feedback on label content, readability, materials,
-                            and accessibility can help guide the design process.
-                        </p>
-
-                        <p>
-                            Have an idea or suggestion for the project?
-                            We welcome feedback from community members.
-                        </p>
-
-                        <p>
-                            <a href="mailto:team1912combustion@gmail.com?subject=FTC%2027406%20Plant%20Identification%20Tag%20Project">
-                                Contact Team 1912 Combustion
-                            </a>
-                        </p>
                     </div>
                 </div>
 
+
+                <p>
+                    <a href="programs.html">
+                        Learn more about our FIRST programs
+                    </a>
+                </p>
+
             </div>
+
+        </section>
+
+
+        <!-- Outreach Initiatives Section -->
+        <div class="page-header reveal">
+
+            <h2>Outreach Initiatives</h2>
+
+            <p class="page-description">
+                Using engineering, creativity, and collaboration to make
+                a difference in our community.
+            </p>
+
+        </div>
+
+
+        <!-- Plant Identification Tag Project Accordion -->
+        <section class="about-section reveal">
+
+            <div class="section-content">
+
+                <div class="outreach-accordion">
+
+                    <!-- Accordion Heading -->
+                    <h3>
+                        <button
+                            type="button"
+                            class="outreach-accordion-trigger"
+                            id="plant-project-toggle"
+                            aria-expanded="false"
+                            aria-controls="plant-project-content"
+                        >
+
+                            <span>
+                                Plant Identification Tag Project
+                            </span>
+
+                            <span
+                                class="outreach-accordion-icon"
+                                aria-hidden="true"
+                            >
+                                +
+                            </span>
+
+                        </button>
+                    </h3>
+
+
+                    <!-- Accordion Content -->
+                    <div
+                        class="outreach-accordion-panel"
+                        id="plant-project-content"
+                        aria-labelledby="plant-project-toggle"
+                        aria-hidden="true"
+                    >
+
+                        <div class="outreach-accordion-panel-inner">
+
+                            <div class="outreach-accordion-content">
+
+                                <h3>Project Overview</h3>
+
+                                <p>
+                                    Impulse is exploring a community project
+                                    focused on plant identification tags for
+                                    the Slidell Library Garden, with the goal
+                                    of helping visitors learn more about the
+                                    plants around them.
+                                </p>
+
+                                <p>
+                                    The project involves exploring how plant
+                                    labels could present useful information
+                                    in a clear, accessible, and durable format
+                                    suitable for an outdoor garden.
+                                </p>
+
+                                <p>
+                                    Depending on the garden's needs, possible
+                                    tag information could include a plant's
+                                    common name, scientific name, and a QR code
+                                    linking to additional information.
+                                </p>
+
+
+                                <h3>From Ideas to Implementation</h3>
+
+                                <p>
+                                    <strong>1. Gather input</strong><br>
+                                    Learn from Master Gardeners, garden visitors,
+                                    and other community members about what
+                                    information would be most useful on plant
+                                    identification tags.
+                                </p>
+
+                                <p>
+                                    <strong>2. Explore designs</strong><br>
+                                    Consider label layouts, readable text,
+                                    suitable materials, and ways to make plant
+                                    information easy to find.
+                                </p>
+
+                                <p>
+                                    <strong>3. Test and refine</strong><br>
+                                    Evaluate possible designs for readability,
+                                    durability, accessibility, and ease of use,
+                                    using feedback to guide improvements.
+                                </p>
+
+                                <p>
+                                    The project is exploratory, and design
+                                    decisions will depend on community feedback
+                                    and the garden's requirements.
+                                </p>
+
+
+                                <h3>Built With Community Input</h3>
+
+                                <p>
+                                    A successful community project starts by
+                                    understanding the people it is intended
+                                    to help. Input from garden visitors and
+                                    Master Gardeners can help the team determine
+                                    which plant details matter most and how
+                                    to present them.
+                                </p>
+
+                                <p>
+                                    Feedback on label content, readability,
+                                    materials, and accessibility can help
+                                    guide the design process.
+                                </p>
+
+                                <p>
+                                    Have an idea or suggestion for the project?
+                                    We welcome feedback from community members.
+                                </p>
+
+                                <p>
+                                    <a
+                                        href="mailto:team1912combustion@gmail.com?subject=FTC%2027406%20Plant%20Identification%20Tag%20Project"
+                                    >
+                                        Contact Team 1912 Combustion
+                                    </a>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
     </main>
 
+
+    <!-- Website Footer -->
     <footer>
+
         <div class="footer-content">
+
             <div class="footer-info">
+
                 <h3>Team 1912 Combustion</h3>
-                <p>&copy; 2025 Team 1912 Combustion. All rights reserved.</p>
+
+                <p>
+                    &copy; 2025 Team 1912 Combustion. All rights reserved.
+                </p>
+
                 <p>
                     Contact us at
-                    <a href="mailto:team1912combustion@gmail.com">team1912combustion@gmail.com</a>
+                    <a href="mailto:team1912combustion@gmail.com">
+                        team1912combustion@gmail.com
+                    </a>
                 </p>
+
             </div>
 
+
             <div class="quick-links">
+
                 <h4>Quick Links</h4>
+
                 <div class="quick-links-grid">
                     <a href="sponsors.html">Sponsors</a>
                     <a href="awards.html">Awards</a>
                     <a href="newsletter.html">Newsletter</a>
                     <a href="calendar.html">Calendar</a>
                 </div>
+
             </div>
+
         </div>
+
     </footer>
 
+
+    <!-- Scroll Animations -->
     <script>
         window.addEventListener('load', function () {
+
             if (typeof ScrollReveal !== 'undefined') {
+
                 ScrollReveal().reveal('.reveal', {
                     duration: 800,
                     distance: '50px',
@@ -302,24 +546,54 @@
                     origin: 'bottom',
                     interval: 100
                 });
+
             }
-        });
 
-        // Keep the accordion's accessibility state synchronized.
-        document.querySelectorAll('.awards-toggle').forEach(button => {
-            button.addEventListener('click', function () {
-                if (this.id === 'plant-project-toggle') {
-                    const panel = document.getElementById('plant-project-content');
-
-                    requestAnimationFrame(() => {
-                        this.setAttribute(
-                            'aria-expanded',
-                            panel.classList.contains('open') ? 'true' : 'false'
-                        );
-                    });
-                }
-            });
         });
     </script>
+
+
+    <!-- Outreach Accordion Functionality -->
+    <script>
+        document.querySelectorAll('.outreach-accordion-trigger').forEach(button => {
+
+            button.addEventListener('click', function () {
+
+                const panelId = this.getAttribute('aria-controls');
+                const panel = document.getElementById(panelId);
+
+                if (!panel) return;
+
+                const isExpanded =
+                    this.getAttribute('aria-expanded') === 'true';
+
+                const newExpandedState = !isExpanded;
+
+                // Update button state
+                this.setAttribute(
+                    'aria-expanded',
+                    String(newExpandedState)
+                );
+
+                // Expand or collapse the panel
+                panel.classList.toggle(
+                    'is-open',
+                    newExpandedState
+                );
+
+                // Update accessibility state
+                panel.setAttribute(
+                    'aria-hidden',
+                    String(!newExpandedState)
+                );
+
+                // Prevent keyboard navigation into collapsed content
+                panel.inert = !newExpandedState;
+
+            });
+
+        });
+    </script>
+
 </body>
 </html>
