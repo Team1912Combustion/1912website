@@ -21,31 +21,83 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/animations.css">
 
-    <!-- Accordion Functionality Only -->
+    <!-- Outreach Accordion Styling and Functionality -->
     <style>
+        /* Full-width outreach section */
+        .about-section.outreach-accordion-section {
+            display: block;
+            width: 100%;
+            max-width: none;
+            box-sizing: border-box;
+        }
+
+        /* Accordion outer container */
+        .outreach-accordion {
+            display: block;
+            width: 100%;
+            max-width: none;
+            box-sizing: border-box;
+
+            border: 2px solid #2498DC;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Remove default heading spacing */
+        .outreach-accordion > h3 {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* Accordion clickable heading */
         .outreach-accordion-trigger {
             appearance: none;
             -webkit-appearance: none;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             width: 100%;
+            box-sizing: border-box;
+            padding: 24px 30px;
+
             background: transparent;
             border: none;
             color: inherit;
             font: inherit;
             text-align: left;
+
             cursor: pointer;
         }
 
+        /* Keyboard accessibility */
         .outreach-accordion-trigger:focus-visible {
             outline: 2px solid currentColor;
-            outline-offset: 4px;
+            outline-offset: -4px;
         }
 
+        /* Plus icon */
+        .outreach-accordion-icon {
+            display: inline-block;
+            flex-shrink: 0;
+            margin-left: 20px;
+            font-size: 1.5em;
+
+            transition: transform 350ms ease;
+        }
+
+        /* Rotate plus when expanded */
+        .outreach-accordion-trigger[aria-expanded="true"]
+        .outreach-accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Accordion animation */
         .outreach-accordion-panel {
             display: grid;
             grid-template-rows: 0fr;
+
             transition: grid-template-rows 350ms ease;
         }
 
@@ -58,16 +110,24 @@
             overflow: hidden;
         }
 
-        .outreach-accordion-icon {
-            display: inline-block;
-            flex-shrink: 0;
-            transition: transform 350ms ease;
+        /* Expanded content spacing */
+        .outreach-accordion-content {
+            padding: 10px 30px 30px;
+            box-sizing: border-box;
         }
 
-        .outreach-accordion-trigger[aria-expanded="true"] .outreach-accordion-icon {
-            transform: rotate(45deg);
+        /* Responsive spacing */
+        @media (max-width: 768px) {
+            .outreach-accordion-trigger {
+                padding: 20px;
+            }
+
+            .outreach-accordion-content {
+                padding: 5px 20px 20px;
+            }
         }
 
+        /* Reduced motion accessibility */
         @media (prefers-reduced-motion: reduce) {
             .outreach-accordion-panel,
             .outreach-accordion-icon {
@@ -86,10 +146,15 @@
 
 </head>
 
+
 <body>
 
-    <!-- Navigation Header -->
+    <!-- ==========================================
+         NAVIGATION HEADER
+    =========================================== -->
+
     <header>
+
         <div class="header-content">
 
             <div class="logo-container">
@@ -100,14 +165,18 @@
                 >
             </div>
 
+
             <nav class="main-nav">
+
                 <ul class="nav-list">
 
                     <li>
                         <a href="index.html">HOME</a>
                     </li>
 
+
                     <li class="dropdown">
+
                         <a href="#" class="dropdown-toggle">ABOUT</a>
 
                         <ul class="dropdown-menu">
@@ -115,24 +184,31 @@
                             <li><a href="sponsors.html">Sponsors</a></li>
                             <li><a href="awards.html">Awards</a></li>
                         </ul>
+
                     </li>
 
+
                     <li class="dropdown">
+
                         <a href="#" class="dropdown-toggle">PROGRAMS</a>
 
                         <ul class="dropdown-menu">
                             <li><a href="robots.html">Robots</a></li>
                             <li><a href="outreach.html">Outreach</a></li>
                             <li><a href="programs.html">Student Programs</a></li>
+
                             <li>
                                 <a href="impulse.html" class="active">
                                     FTC Team 27406 Impulse
                                 </a>
                             </li>
                         </ul>
+
                     </li>
 
+
                     <li class="dropdown">
+
                         <a href="#" class="dropdown-toggle">
                             EVENTS <span class="new-indicator">!</span>
                         </a>
@@ -143,12 +219,18 @@
                                     Events <span class="new-indicator">!</span>
                                 </a>
                             </li>
-                            <li><a href="newsletter.html">Newsletter</a></li>
+
+                            <li>
+                                <a href="newsletter.html">Newsletter</a>
+                            </li>
                         </ul>
+
                     </li>
 
                 </ul>
+
             </nav>
+
 
             <button
                 id="mobile-menu-toggle"
@@ -161,10 +243,15 @@
             </button>
 
         </div>
+
     </header>
 
 
-    <!-- Social Media Links -->
+
+    <!-- ==========================================
+         SOCIAL MEDIA LINKS
+    =========================================== -->
+
     <div class="social-icons">
 
         <a
@@ -176,6 +263,7 @@
             <img src="assets/websites/facebook.png" alt="Facebook">
         </a>
 
+
         <a
             href="https://www.instagram.com/frc1912"
             target="_blank"
@@ -184,6 +272,7 @@
         >
             <img src="assets/websites/instagram.png" alt="Instagram">
         </a>
+
 
         <a
             href="https://www.youtube.com/team1912combustion"
@@ -194,6 +283,7 @@
             <img src="assets/websites/Youtube.png" alt="YouTube">
         </a>
 
+
         <a
             href="https://github.com/team1912combustion"
             target="_blank"
@@ -203,6 +293,7 @@
             <img src="assets/websites/github-logo.png" alt="GitHub">
         </a>
 
+
         <a
             href="https://www.thebluealliance.com/team/1912"
             target="_blank"
@@ -211,6 +302,7 @@
         >
             <img src="assets/websites/thebluealliance.png" alt="The Blue Alliance">
         </a>
+
 
         <a
             href="https://www.tiktok.com/@team1912combustion"
@@ -224,8 +316,13 @@
     </div>
 
 
-    <!-- Main Page Content -->
+
+    <!-- ==========================================
+         MAIN PAGE CONTENT
+    =========================================== -->
+
     <main class="page-content">
+
 
         <!-- Page Introduction -->
         <div class="page-header reveal">
@@ -240,16 +337,23 @@
         </div>
 
 
-        <!-- About Impulse -->
+
+        <!-- ======================================
+             ABOUT IMPULSE
+        ======================================= -->
+
         <section class="about-section reveal">
 
             <div class="section-image">
+
                 <img
                     src="assets/static/photos/ftc27406.jpg"
                     alt="FTC Team 27406 Impulse"
                     class="feature-image"
                 >
+
             </div>
+
 
             <div class="section-content">
 
@@ -287,9 +391,11 @@
                         Awards ▾
                     </button>
 
+
                     <div class="awards-content">
 
                         <ul>
+
                             <li>2025</li>
 
                             <li>
@@ -317,9 +423,11 @@
                                 Louisiana Championship – FIRST Leadership Award
                                 (Zakk Jackson)
                             </li>
+
                         </ul>
 
                     </div>
+
                 </div>
 
 
@@ -334,7 +442,11 @@
         </section>
 
 
-        <!-- Outreach Initiatives Section -->
+
+        <!-- ======================================
+             OUTREACH INITIATIVES
+        ======================================= -->
+
         <div class="page-header reveal">
 
             <h2>Outreach Initiatives</h2>
@@ -347,137 +459,148 @@
         </div>
 
 
-        <!-- Plant Identification Tag Project Accordion -->
-        <section class="about-section reveal">
 
-            <div class="section-content">
+        <!-- ======================================
+             PLANT IDENTIFICATION PROJECT ACCORDION
+        ======================================= -->
 
-                <div class="outreach-accordion">
+        <section class="about-section outreach-accordion-section reveal">
 
-                    <!-- Accordion Heading -->
-                    <h3>
-                        <button
-                            type="button"
-                            class="outreach-accordion-trigger"
-                            id="plant-project-toggle"
-                            aria-expanded="false"
-                            aria-controls="plant-project-content"
-                        >
-
-                            <span>
-                                Plant Identification Tag Project
-                            </span>
-
-                            <span
-                                class="outreach-accordion-icon"
-                                aria-hidden="true"
-                            >
-                                +
-                            </span>
-
-                        </button>
-                    </h3>
+            <div class="outreach-accordion">
 
 
-                    <!-- Accordion Content -->
-                    <div
-                        class="outreach-accordion-panel"
-                        id="plant-project-content"
-                        aria-labelledby="plant-project-toggle"
-                        aria-hidden="true"
+                <!-- Accordion Heading -->
+                <h3>
+
+                    <button
+                        type="button"
+                        class="outreach-accordion-trigger"
+                        id="plant-project-toggle"
+                        aria-expanded="false"
+                        aria-controls="plant-project-content"
                     >
 
-                        <div class="outreach-accordion-panel-inner">
+                        <span>
+                            Plant Identification Tag Project
+                        </span>
 
-                            <div class="outreach-accordion-content">
+                        <span
+                            class="outreach-accordion-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
 
-                                <h3>Project Overview</h3>
+                    </button>
 
-                                <p>
-                                    Impulse is exploring a community project
-                                    focused on plant identification tags for
-                                    the Slidell Library Garden, with the goal
-                                    of helping visitors learn more about the
-                                    plants around them.
-                                </p>
-
-                                <p>
-                                    The project involves exploring how plant
-                                    labels could present useful information
-                                    in a clear, accessible, and durable format
-                                    suitable for an outdoor garden.
-                                </p>
-
-                                <p>
-                                    Depending on the garden's needs, possible
-                                    tag information could include a plant's
-                                    common name, scientific name, and a QR code
-                                    linking to additional information.
-                                </p>
+                </h3>
 
 
-                                <h3>From Ideas to Implementation</h3>
 
-                                <p>
-                                    <strong>1. Gather input</strong><br>
-                                    Learn from Master Gardeners, garden visitors,
-                                    and other community members about what
-                                    information would be most useful on plant
-                                    identification tags.
-                                </p>
+                <!-- Accordion Expandable Content -->
+                <div
+                    class="outreach-accordion-panel"
+                    id="plant-project-content"
+                    aria-labelledby="plant-project-toggle"
+                    aria-hidden="true"
+                    inert
+                >
 
-                                <p>
-                                    <strong>2. Explore designs</strong><br>
-                                    Consider label layouts, readable text,
-                                    suitable materials, and ways to make plant
-                                    information easy to find.
-                                </p>
+                    <div class="outreach-accordion-panel-inner">
 
-                                <p>
-                                    <strong>3. Test and refine</strong><br>
-                                    Evaluate possible designs for readability,
-                                    durability, accessibility, and ease of use,
-                                    using feedback to guide improvements.
-                                </p>
-
-                                <p>
-                                    The project is exploratory, and design
-                                    decisions will depend on community feedback
-                                    and the garden's requirements.
-                                </p>
+                        <div class="outreach-accordion-content">
 
 
-                                <h3>Built With Community Input</h3>
+                            <!-- Project Overview -->
+                            <h3>Project Overview</h3>
 
-                                <p>
-                                    A successful community project starts by
-                                    understanding the people it is intended
-                                    to help. Input from garden visitors and
-                                    Master Gardeners can help the team determine
-                                    which plant details matter most and how
-                                    to present them.
-                                </p>
+                            <p>
+                                Impulse is exploring a community project focused
+                                on plant identification tags for the Slidell
+                                Library Garden, with the goal of helping visitors
+                                learn more about the plants around them.
+                            </p>
 
-                                <p>
-                                    Feedback on label content, readability,
-                                    materials, and accessibility can help
-                                    guide the design process.
-                                </p>
+                            <p>
+                                The project involves exploring how plant labels
+                                could present useful information in a clear,
+                                accessible, and durable format suitable for an
+                                outdoor garden.
+                            </p>
 
-                                <p>
-                                    Have an idea or suggestion for the project?
-                                    We welcome feedback from community members.
-                                </p>
+                            <p>
+                                Depending on the garden's needs, possible tag
+                                information could include a plant's common name,
+                                scientific name, and a QR code linking to
+                                additional information.
+                            </p>
 
-                                <p>
-                                    <a
-                                        href="mailto:team1912combustion@gmail.com?subject=FTC%2027406%20Plant%20Identification%20Tag%20Project"
-                                    >
-                                        Contact Team 1912 Combustion
-                                    </a>
-                                </p>
 
-                            </div>
+
+                            <!-- Project Development -->
+                            <h3>From Ideas to Implementation</h3>
+
+                            <p>
+                                <strong>1. Gather input</strong><br>
+
+                                Learn from Master Gardeners, garden visitors,
+                                and other community members about what information
+                                would be most useful on plant identification tags.
+                            </p>
+
+                            <p>
+                                <strong>2. Explore designs</strong><br>
+
+                                Consider label layouts, readable text, suitable
+                                materials, and ways to make plant information
+                                easy to find.
+                            </p>
+
+                            <p>
+                                <strong>3. Test and refine</strong><br>
+
+                                Evaluate possible designs for readability,
+                                durability, accessibility, and ease of use,
+                                using feedback to guide improvements.
+                            </p>
+
+                            <p>
+                                The project is exploratory, and design decisions
+                                will depend on community feedback and the garden's
+                                requirements.
+                            </p>
+
+
+
+                            <!-- Community Involvement -->
+                            <h3>Built With Community Input</h3>
+
+                            <p>
+                                A successful community project starts by
+                                understanding the people it is intended to help.
+                                Input from garden visitors and Master Gardeners
+                                can help the team determine which plant details
+                                matter most and how to present them.
+                            </p>
+
+                            <p>
+                                Feedback on label content, readability, materials,
+                                and accessibility can help guide the design process.
+                            </p>
+
+                            <p>
+                                Have an idea or suggestion for the project?
+                                We welcome feedback from community members.
+                            </p>
+
+                            <p>
+                                <a
+                                    href="mailto:team1912combustion@gmail.com?subject=FTC%2027406%20Plant%20Identification%20Tag%20Project"
+                                >
+                                    Contact Team 1912 Combustion
+                                </a>
+                            </p>
+
 
                         </div>
 
@@ -489,13 +612,19 @@
 
         </section>
 
+
     </main>
 
 
-    <!-- Website Footer -->
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
     <footer>
 
         <div class="footer-content">
+
 
             <div class="footer-info">
 
@@ -515,46 +644,63 @@
             </div>
 
 
+
             <div class="quick-links">
 
                 <h4>Quick Links</h4>
 
                 <div class="quick-links-grid">
+
                     <a href="sponsors.html">Sponsors</a>
                     <a href="awards.html">Awards</a>
                     <a href="newsletter.html">Newsletter</a>
                     <a href="calendar.html">Calendar</a>
+
                 </div>
 
             </div>
+
 
         </div>
 
     </footer>
 
 
-    <!-- Scroll Animations -->
+
+    <!-- ==========================================
+         SCROLL ANIMATIONS
+    =========================================== -->
+
     <script>
+
         window.addEventListener('load', function () {
 
             if (typeof ScrollReveal !== 'undefined') {
 
                 ScrollReveal().reveal('.reveal', {
+
                     duration: 800,
                     distance: '50px',
                     easing: 'ease-out',
                     origin: 'bottom',
                     interval: 100
+
                 });
 
             }
 
         });
+
     </script>
 
 
-    <!-- Outreach Accordion Functionality -->
+
+    <!-- ==========================================
+         OUTREACH ACCORDION FUNCTIONALITY
+    =========================================== -->
+
     <script>
+
         document.querySelectorAll('.outreach-accordion-trigger').forEach(button => {
 
             button.addEventListener('click', function () {
@@ -562,12 +708,15 @@
                 const panelId = this.getAttribute('aria-controls');
                 const panel = document.getElementById(panelId);
 
-                if (!panel) return;
+                if (!panel) {
+                    return;
+                }
 
                 const isExpanded =
                     this.getAttribute('aria-expanded') === 'true';
 
                 const newExpandedState = !isExpanded;
+
 
                 // Update button state
                 this.setAttribute(
@@ -575,11 +724,13 @@
                     String(newExpandedState)
                 );
 
+
                 // Expand or collapse the panel
                 panel.classList.toggle(
                     'is-open',
                     newExpandedState
                 );
+
 
                 // Update accessibility state
                 panel.setAttribute(
@@ -587,13 +738,17 @@
                     String(!newExpandedState)
                 );
 
+
                 // Prevent keyboard navigation into collapsed content
                 panel.inert = !newExpandedState;
 
             });
 
         });
+
     </script>
 
+
 </body>
+
 </html>
